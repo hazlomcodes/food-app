@@ -1,13 +1,21 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import DonationForm from './DonationForm';
+import DonationForm from './Donations';
+import Login from "./login";
+import Navbar from "./Navbar";
+
 
 function App() {
   return (
     <div className='app'>
-      <Routes>
-        <Route path="/donations" element={<DonationForm />} />
-      </Routes>
+      <React.Fragment>
+        <Navbar />
+        <Login />
+        <DonationForm />
+      </React.Fragment>
+        
+        
+    
     </div>
   );
 }
