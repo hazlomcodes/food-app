@@ -1,10 +1,15 @@
 import "../styles/App.css";
+import Login from "./login.js"
 
 function App() {
+  
   return (
-    <div className="App">
-     <h1> Hello </h1>
-    </div>
+    <main className="App">
+      <Login />
+      </ main>
+
+    
+  
   );
 }
 
