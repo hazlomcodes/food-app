@@ -1,15 +1,16 @@
 import "../styles/App.css";
 import Login from "./login.js"
-import Home from "./Home";
 import Navbar from "./Navbar";
+import React from "react";
 
 function App() {
   
   return (
-    <main className="App">
-      <Home />
+    <React.Fragment>
+      <Navbar />
       <Login />
-      </ main>
+      </React.Fragment> 
+    
 
     
   
