@@ -10,14 +10,16 @@ function App() {
     <div className='app'>
       <React.Fragment>
         <Navbar />
-        <Login />
-        <DonationForm />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/donation" element={<DonationForm />} />
+        </Routes>
       </React.Fragment>
-        
-        
-    
     </div>
   );
 }
-
+  
+        
+    
+ 
 export default App;
