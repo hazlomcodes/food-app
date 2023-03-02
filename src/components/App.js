@@ -5,6 +5,7 @@ import DonationApp  from "./DonationApp"
 import Login from "./login";
 import Navbar from "./Navbar";
 import Search from './Search';
+import Home from './Home';
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
       <React.Fragment>
         <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/search" component={Search} />
           <Route path="/donation" element={<DonationApp />} />
         </Routes>
       </React.Fragment>

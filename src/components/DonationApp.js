@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import DonationForm from './Donations';
 import Search from './Search';
+//import '../styles/donation-app.css'
+
 
 
 const Donations = () => {
@@ -17,7 +19,6 @@ const Donations = () => {
       <h1>Donations</h1>
       <DonationForm onDonation={handleDonation} />
       <Search donations={donations} />
-
     </div>
   );
 };
