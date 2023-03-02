@@ -18,7 +18,7 @@ function Navbar() {
 			<h3>LOGO</h3>
 			<nav ref={navRef}>
 				<a href="/#">Home</a>
-				<a href="/#">Search</a>
+				<Link to="/search">Search</Link>
 				<Link to="/donation">Donate</Link>
 				<a href="/#">Login</a>
 				<button
