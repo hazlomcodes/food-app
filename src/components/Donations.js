@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import "../styles/donation.css"
 
-const DonationForm = () => {
+
+const DonationForm = ({ onDonation }) => {
   const [foodItem, setFoodItem] = useState('');
   const [quantity, setQuantity] = useState('');
   const [expiration, setExpiration] = useState('');
@@ -13,7 +14,8 @@ const DonationForm = () => {
       quantity,
       expiration,
     };
-    console.log(donation);
+    console.log('Donation:', donation);
+    onDonation(donation); // Call the onDonation function passed from parent component
     setFoodItem('');
     setQuantity('');
     setExpiration('');
