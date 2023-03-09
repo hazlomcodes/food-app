@@ -7,7 +7,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 80%;
-  margin: 0 auto;
+  margin: 4 auto;
 }
 
 .donation-form__label {
@@ -65,7 +65,7 @@
 }
 
 .donation-form__return-button {
-  background-color: #3f51b5;
+  background-color: #295c50;
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -78,7 +78,8 @@
 }
 
 .donation-form__return-button:hover {
-  background-color: #303f9f;
+  
+  background-color: #295c50;
 }
 
 @media (max-width: 600px) {
