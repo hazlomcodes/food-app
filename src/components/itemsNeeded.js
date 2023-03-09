@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -8,25 +6,23 @@ const ItemsNeeded = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await axios.get('https://www.givefood.org.uk/api/2/foodbanks/');
-        const foodbanks = response.data?.results;
-        if (foodbanks) {
-          const needs = await Promise.all(
-            foodbanks.map(async foodbank => {
-              const needsResponse = await axios.get(`https://www.givefood.org.uk/api/2/need/${foodbank.id}/`);
-              return needsResponse.data;
-            })
-          );
-          const mergedNeeds = needs.reduce((acc, curr) => [...acc, ...curr], []);
-          setItems(mergedNeeds);
-        }
-      } catch (error) {
-        console.error(error);
-      }
+      const response = await axios.get('https://www.givefood.org.uk/api/2/foodbanks/');
+      console.log('Foodbanks response:', response.data);
+      const foodbanks = response.data.results;
+      const needs = await Promise.all(
+        foodbanks.map(async foodbank => {
+          const needsResponse = await axios.get(`https://www.givefood.org.uk/api/2/need/${foodbank.id}/`);
+          return needsResponse.data;
+        })
+      );
+      console.log('Needs:', needs);
+      const mergedNeeds = needs.reduce((acc, curr) => [...acc, ...curr], []);
+      setItems(mergedNeeds);
     };
     fetchData();
   }, []);
+
+  console.log('Items:', items);
 
   return (
     <div>
