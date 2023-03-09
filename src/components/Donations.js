@@ -1,65 +1,75 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 import "../styles/donation.css"
 
-
-const DonationForm = ({ onDonation }) => {
-  const [foodItem, setFoodItem] = useState('');
+const DonationForm = ({ onSubmit }) => {
+  const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
   const [expiration, setExpiration] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const donation = {
-      foodItem,
-      quantity,
-      expiration,
-    };
-    console.log('Donation:', donation);
-    onDonation(donation); // Call the onDonation function passed from parent component
-    setFoodItem('');
-    setQuantity('');
-    setExpiration('');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('//donations', { name, quantity, expiration });
+      onSubmit(response.data);
+      setName('');
+      setQuantity('');
+      setExpiration('');
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <form className="donation-form" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="foodItem">Food Item:</label>
+      <label className="donation-form__label" htmlFor="donation-name">
+        Name:
         <input
+          className="donation-form__input"
           type="text"
-          id="foodItem"
-          className="form-control"
-          value={foodItem}
-          onChange={(e) => setFoodItem(e.target.value)}
+          value={name}
+          onChange={(event) => setName(event.target.value)}
           required
+          placeholder="Enter name of donation"
+          title="Name"
+          id="donation-name"
         />
-      </div>
-      
-      <div className="form-group">
-        <label htmlFor="quantity">Quantity:</label>
+      </label>
+      <label className="donation-form__label" htmlFor="donation-quantity">
+        Quantity:
         <input
+          className="donation-form__input"
           type="number"
-          id="quantity"
-          className="form-control"
           value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
+          onChange={(event) => setQuantity(event.target.value)}
           required
+          placeholder="Enter the quantity"
+          title="Quantity"
+          id="donation-quantity"
         />
-      </div>
-      <div className="form-group">
-        <label htmlFor="expiration">Expiration Date:</label>
+      </label>
+      <label className="donation-form__label" htmlFor="donation-expiration">
+        Expiration:
         <input
+          className="donation-form__input"
           type="date"
-          id="expiration"
-          className="form-control"
           value={expiration}
-          onChange={(e) => setExpiration(e.target.value)}
+          onChange={(event) => setExpiration(event.target.value)}
           required
+          placeholder="Enter the expiration date"
+          title="Expiration"
+          id="donation-expiration"
         />
-      </div>
-      <button type="submit" className="btn btn-primary">Donate</button>
+      </label>
+      <button className="donation-form__submit-button" type="submit">Submit</button>
     </form>
   );
 };
 
+DonationForm.propTypes = {
+  onSubmit: PropTypes.func
+};
+
 export default DonationForm;
+
