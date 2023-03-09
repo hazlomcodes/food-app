@@ -1,8 +1,26 @@
-import { render, screen } from "@testing-library/react";
-import App from "../components/App";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import App from '../components/App';
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/Hello/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App component", () => {
+
+test('renders "Donate Now" button', () => {
+  render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+  const donateButton = screen.getByRole('link', { name: /Donate Now/i });
+  expect(donateButton).toBeInTheDocument();
 });
+
+test('renders "Sign Up Now" button', () => {
+  render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+  const signUpButton = screen.getByRole('link', { name: /Sign Up Now/i });
+  expect(signUpButton).toBeInTheDocument();
+})});
