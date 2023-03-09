@@ -2,13 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 
-
-
 const Home = () => {
   return (
     <div className="home-container">
       <div className="banner">
-      
         <h1 className="home-header">Welcome to Our Food Donation Community</h1>
         <p className="home-text">
           We are a community of volunteers dedicated to fighting hunger and
@@ -34,8 +31,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-     
 
       <div className="cta">
         <h2 className="cta-title">Join Our Community Today</h2>
