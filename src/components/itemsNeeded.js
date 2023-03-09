@@ -1,3 +1,5 @@
+
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -6,12 +8,22 @@ const ItemsNeeded = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get('https://www.givefood.org.uk/api/2/need/e0798fd7/', {
-        params: {
-          api_key: 'YOUR_API_KEY'
+      try {
+        const response = await axios.get('https://www.givefood.org.uk/api/2/foodbanks/');
+        const foodbanks = response.data?.results;
+        if (foodbanks) {
+          const needs = await Promise.all(
+            foodbanks.map(async foodbank => {
+              const needsResponse = await axios.get(`https://www.givefood.org.uk/api/2/need/${foodbank.id}/`);
+              return needsResponse.data;
+            })
+          );
+          const mergedNeeds = needs.reduce((acc, curr) => [...acc, ...curr], []);
+          setItems(mergedNeeds);
         }
-      });
-      setItems(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchData();
   }, []);
@@ -22,6 +34,7 @@ const ItemsNeeded = () => {
       <table>
         <thead>
           <tr>
+            <th>Food Bank</th>
             <th>Item</th>
             <th>Location</th>
             <th>Quantity</th>
@@ -30,6 +43,7 @@ const ItemsNeeded = () => {
         <tbody>
           {items.map(item => (
             <tr key={item.id}>
+              <td>{item.foodbank_name}</td>
               <td>{item.name}</td>
               <td>{item.location_name}</td>
               <td>{item.needed}</td>

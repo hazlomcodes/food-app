@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../styles/home.css";
 
 
+
 const Home = () => {
   return (
     <div className="home-container">
@@ -33,6 +34,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+     
 
       <div className="cta">
         <h2 className="cta-title">Join Our Community Today</h2>
