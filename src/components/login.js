@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import FacebookLogin from 'react-facebook-login';
+import '../styles/login.css'
 
 export default class Facebook extends Component {
 
@@ -19,11 +20,6 @@ export default class Facebook extends Component {
         });
 
     }
-
-    componentClicked = () => {
-        console.log('Facebook btn clicked');
-    }
-
     render(){
         let fbContent;
 
@@ -32,7 +28,6 @@ export default class Facebook extends Component {
                 <div style={{
                     width: '400px',
                     margin: 'auto',
-                    background: '#f4f4f4',
                     padding: '20px',
                     color: '#000'
                 }}>
@@ -45,12 +40,17 @@ export default class Facebook extends Component {
                 autoLoad={true}
                 fields="name,picture"
                 onClick={this.componentClicked}
-                callback={this.responseFacebook} />);
+                callback={this.responseFacebook} 
+                cssClass="btnFacebook"
+                textButton = "&nbsp;&nbsp;Sign In with Facebook"                                                                
+                />);
 
         return (
             <div>
                 {fbContent}
             </div>
         );
+
+        
     }
 }
