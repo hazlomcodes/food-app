@@ -8,16 +8,17 @@ const Search = () => {
 
   const handleSearch = async (event) => {
     event.preventDefault();
-
+  
     try {
       const response = await axios.get(
-        `/http://localhost:3000/donations/search${searchTerm}`
+        `http://localhost:3000/donations/search?name=${searchTerm}`
       );
       setDonations(response.data);
     } catch (error) {
       console.error(error);
     }
   };
+  
 
   return (
     <div>
