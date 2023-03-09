@@ -10,7 +10,9 @@ const Search = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.get(`/api/search?name=${searchTerm}`);
+      const response = await axios.get(
+        `/http://localhost:3000/donations/search${searchTerm}`
+      );
       setDonations(response.data);
     } catch (error) {
       console.error(error);

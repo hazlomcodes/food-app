@@ -19,7 +19,7 @@ const DonationForm = ({ onSubmit }) => {
         postcode,
       });
       console.log("Donation submitted:", response.data);
-      onSubmit(response.data);
+
       setName("");
       setQuantity("");
       setExpiration("");
