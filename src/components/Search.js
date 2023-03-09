@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/search.css";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [donations, setDonations] = useState([]);
+  const [allDonations, setAllDonations] = useState([]);
+
+  useEffect(() => {
+    const fetchDonations = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/donations`);
+        setAllDonations(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchDonations();
+  }, []);
+
 
   const handleSearch = async (event) => {
     event.preventDefault();
@@ -37,6 +51,14 @@ const Search = () => {
 
       <ul className="donation-list">
         {donations.map((donation) => (
+          <li key={donation.id}>
+            {donation.name} - {donation.quantity} - {donation.expiration}
+          </li>
+        ))}
+      </ul>
+      <h2>All Donations</h2>
+      <ul className="donation-list">
+        {allDonations.map((donation) => (
           <li key={donation.id}>
             {donation.name} - {donation.quantity} - {donation.expiration}
           </li>
