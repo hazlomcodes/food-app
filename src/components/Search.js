@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import "../styles/search.css"
+import React, { useState } from "react";
+import axios from "axios";
+import "../styles/search.css";
 
 const Search = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [donations, setDonations] = useState([]);
 
   const handleSearch = async (event) => {
@@ -27,7 +27,9 @@ const Search = () => {
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
         />
-        <button className="search-button" type="submit">Search</button>
+        <button className="search-button" type="submit">
+          Search
+        </button>
       </form>
 
       <ul className="donation-list">

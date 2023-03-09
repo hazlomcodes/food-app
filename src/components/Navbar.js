@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../styles/navbar.css";
-import logoImage from "../logo/logoImage.jpg"
 
 function Navbar() {
   const navRef = useRef();
@@ -13,9 +12,6 @@ function Navbar() {
 
   return (
     <header>
-    
-
-
       <nav ref={navRef}>
         <a href="/#">Home</a>
         <Link to="/search">Search</Link>
