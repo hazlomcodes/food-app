@@ -7,7 +7,7 @@ const DonationForm = ({ onSubmit }) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [expiration, setExpiration] = useState("");
-  const [postcode, setPostcode] = useState("");
+  const [donator, setDonator] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -17,14 +17,14 @@ const DonationForm = ({ onSubmit }) => {
         name,
         quantity,
         expiration,
-        postcode,
+        donator,
       });
       console.log("Donation submitted:", response.data);
 
       setName("");
       setQuantity("");
       setExpiration("");
-      setPostcode("");
+      setDonator("");
       setSubmitted(true);
 
       event.target.reset();
@@ -87,18 +87,19 @@ const DonationForm = ({ onSubmit }) => {
               id="donation-expiration"
             />
           </label>
-          <label className="donation-form__label" htmlFor="donation-postcode">
-            Postcode:
+          <label className="donation-form__label" htmlFor="donation-donator">
+            Donator:
             <input
               className="donation-form__input"
               type="text"
-              value={postcode}
-              onChange={(event) => setPostcode(event.target.value)}
+              value={donator}
+              onChange={(event) => setDonator(event.target.value)}
               required
-              placeholder="Enter the postcode"
-              title="Postcode"
-              id="donation-postcode"
+              placeholder="Enter your name"
+              title="Donator"
+              id="donation-donator"
             />
+            
           </label>
           <button className="donation-form__submit-button" type="submit">
             Submit
