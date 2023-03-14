@@ -31,8 +31,8 @@ export default class Facebook extends Component {
                     padding: '20px',
                     color: '#000'
                 }}>
-                    <img src={this.state.picture} alt={this.state.name} />
-                    <h2>Welcome {this.state.name}!</h2>
+                    <img className='profilePic' src={this.state.picture} alt={this.state.name} />
+                    <h2 className='loginMsg'>Welcome {this.state.name}!</h2>
                     
                 </div>
             ) : 

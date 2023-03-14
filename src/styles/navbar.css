@@ -1,7 +1,7 @@
 :root {
-  --mainColor: #BE8A62;
-  --mainColorLight: #5767aa;
-  --secondaryColor: #db2b39;
+  --mainColor: rgb(94,138,117);
+  --mainColorLight: rgb(43, 71, 92);
+  --secondaryColor:#303f9f;
   --textColor: #eee;
 }
 
@@ -10,12 +10,12 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  padding: 0 2rem;
+  padding: 0;
   background-color: var(--mainColor);
   color: var(--textColor);
 }
 
-.logo { 
+.logonavbar { 
   height:70px;
   display:flex;
 }

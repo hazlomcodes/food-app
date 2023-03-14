@@ -13,7 +13,15 @@
 .btnFacebook:hover {
   background: #3b5998;
   opacity: 0.6;
+  cursor: pointer;
 }
+
+.loginMsg{
+  font-size: 100px;
+}
+
+
+
 
 @media only screen and (max-width : 399px) {
   .btnFacebook{

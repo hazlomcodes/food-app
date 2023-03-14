@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
+import logo from "../styles/images/logoText.png"
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
       <div className="row">
         <div className="col">
           <img
-            src="https://media.istockphoto.com/id/1223169200/vector/food-and-grocery-donation.jpg?s=612x612&w=0&k=20&c=0fv8hwXeS9RCL-ewqkr2oyi0Nu8jAQxGtroS0XA9nsQ="
+            src={logo}
             alt="Donate food"
           />
           <img
