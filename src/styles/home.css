@@ -1,4 +1,30 @@
-.home-container {
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.logo-column {
+  background-color:#E9E6E1;
+  height: 850px;
+}
+
+.green-column {
+  background-color: rgb(94,138,117);
+  height: 850px;
+}
+
+
+
+/* .home-container {
   margin-top: 80px;
   display: flex;
   flex-direction: column;
@@ -140,4 +166,4 @@
     font-size: 0.8rem;
     margin-bottom: 1rem;
   }
-}
+} */

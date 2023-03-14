@@ -1,22 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/home.css";
-import logo from "../styles/images/logoText.png"
+import logo from "../styles/images/logo.png"
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <div className="banner">
-        <h1 className="home-header">Welcome to Our Food Donation Community</h1>
-        <p className="home-text">
-          We are a community of volunteers dedicated to fighting hunger and
-          reducing food waste.
-        </p>
-      </div>
 
-      <div className="row">
-        <div className="col">
-          <img
+
+    <div class='some-page-wrapper'>
+  <div class='row'>
+    <div class='column'>
+      <div class='logo-column'>
+        Some Text in Column One
+        <img src={logo} alt="logo-app"></img>
+      </div>
+    </div>
+    <div class='column'>
+      <div class='green-column'>
+       We are Do-Nation
+      </div>
+    </div>
+  </div>
+</div>
+);
+};
+
+export default Home;
+
+
+{/* <img
             src={logo}
             alt="Donate food"
           />
@@ -28,23 +40,9 @@ const Home = () => {
             <h2 className="overlay-title">Donate Food</h2>
             <Link to="/donation" className="home-btn">
               Donate Now
-            </Link>
-          </div>
-        </div>
-      </div>
+            </Link> */}
 
-      <div className="cta">
-        <h2 className="cta-title">Join Our Community Today</h2>
-        <p className="cta-text">
-          Together, we can make a difference in the fight against food waste!
-          Donate Donate Donate
-        </p>
-        <Link to="/login" className="home-btn">
+
+             {/* <Link to="/login" className="home-btn">
           Sign Up Now
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-export default Home;
+        </Link> */}

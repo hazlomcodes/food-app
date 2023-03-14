@@ -8,7 +8,6 @@ const DonationForm = ({ onSubmit }) => {
   const [quantity, setQuantity] = useState("");
   const [expiration, setExpiration] = useState("");
   const [donator, setDonator] = useState("");
-  const [contact, setContact] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -19,7 +18,7 @@ const DonationForm = ({ onSubmit }) => {
         quantity,
         expiration,
         donator,
-        contact,
+        
       });
       console.log("Donation submitted:", response.data);
 
@@ -27,7 +26,6 @@ const DonationForm = ({ onSubmit }) => {
       setQuantity("");
       setExpiration("");
       setDonator("");
-      setContact("");
       setSubmitted(true);
 
       event.target.reset();
@@ -90,35 +88,20 @@ const DonationForm = ({ onSubmit }) => {
               id="donation-expiration"
             />
           </label>
-          <label className="donation-form__label" htmlFor="donation-donator">
-            Donator:
+          <label className="donation-form__label" htmlFor="donation-username">
+            Username:
             <input
               className="donation-form__input"
               type="text"
               value={donator}
               onChange={(event) => setDonator(event.target.value)}
               required
-              placeholder="Enter your name"
-              title="Donator"
-              id="donation-donator"
+              placeholder="Enter your usernname"
+              title="Username"
+              id="donation-username"
             />
-            
-          </label>
-          <label className="donation-form__label" htmlFor="donation-contact">
-            Contact:
-            <input
-              className="donation-form__input"
-              type="text"
-              value={contact}
-              onChange={(event) => setContact(event.target.value)}
-              required
-              placeholder="Please enter either contact number or email"
-              title="Contact"
-              id="donation-Contact"
-            />
-            
-          </label>
-          <button className="donation-form__submit-button" type="submit">
+            </label>
+           <button className="donation-form__submit-button" type="submit">
             Submit
           </button>
         </form>
