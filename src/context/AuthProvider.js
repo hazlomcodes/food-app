@@ -1,15 +1,18 @@
 import { createContext, useState } from "react";
 
-const AuthContext = createContext({});
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState({});
+  const [FBdata, setFBdata] = useState(null); // change the initial state to null
 
   return (
-    <AuthContext.Provider value={{ auth, setAuth }}>
+    <AuthContext.Provider value={{ FBdata, setFBdata }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export default AuthContext;
+
+
+
+
