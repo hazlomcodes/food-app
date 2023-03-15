@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import "../styles/home.css";
 import logo from "../styles/images/logo.png"
 
@@ -7,16 +7,16 @@ const Home = () => {
   return (
 
 
-    <div class='some-page-wrapper'>
-  <div class='row'>
-    <div class='column'>
-      <div class='logo-column'>
+    <div className='some-page-wrapper'>
+  <div className='row'>
+    <div className='column'>
+      <div className='logo-column'>
         Some Text in Column One
         <img src={logo} alt="logo-app"></img>
       </div>
     </div>
-    <div class='column'>
-      <div class='green-column'>
+    <div className='column'>
+      <div className='green-column'>
        We are Do-Nation
       </div>
     </div>

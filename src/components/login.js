@@ -1,57 +1,59 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect } from 'react';
 import FacebookLogin from 'react-facebook-login';
-import '../styles/login.css'
+import '../styles/login.css';
 
-export default class Facebook extends Component {
+const Facebook = () => {
+  const [auth, setAuth] = useState(false);
+  const [name, setName] = useState('');
+  const [picture, setPicture] = useState('');
 
-    state = {
-        auth: false,
-        name: '',
-        picture: ''
-    };
-
-    responseFacebook = response => {
-        console.log(response);
-        if(response.status !== 'unknown')
-        this.setState({
-            auth: true,
-            name: response.name,
-            picture: response.picture.data.url
-        });
-
+  const responseFacebook = (response) => {
+    console.log(response);
+    if (response.status !== 'unknown') {
+      setAuth(true);
+      setName(response.name);
+      setPicture(response.picture.data.url);
     }
-    render(){
-        let fbContent;
+  };
 
-        this.state.auth ?
-            fbContent = (
-                <div style={{
-                    width: '400px',
-                    margin: 'auto',
-                    padding: '20px',
-                    color: '#000'
-                }}>
-                    <img className='profilePic' src={this.state.picture} alt={this.state.name} />
-                    <h2 className='loginMsg'>Welcome {this.state.name}!</h2>
-                    
-                </div>
-            ) : 
-            fbContent = (<FacebookLogin
-                appId="784357619748979"
-                autoLoad={true}
-                fields="name,picture"
-                onClick={this.componentClicked}
-                callback={this.responseFacebook} 
-                cssClass="btnFacebook"
-                textButton = "&nbsp;&nbsp;Sign In with Facebook"                                                                
-                />);
-
-        return (
-            <div>
-                {fbContent}
-            </div>
-        );
-
-        
+  useEffect(() => {
+    if (auth) {
+      const timer = setTimeout(() => {
+        window.location.href = '/home'; // replace '/home' with the desired page URL
+      }, 3000); // 3 seconds delay
+      return () => clearTimeout(timer); // clear the timer on component unmount
     }
-}
+  }, [auth]);
+
+  let fbContent;
+  if (auth) {
+    fbContent = (
+      <div
+        style={{
+          width: '400px',
+          margin: 'auto',
+          padding: '20px',
+          color: '#000',
+        }}
+      >
+        <img className='profilePic' src={picture} alt={name} />
+        <h2 className='loginMsg'>Welcome {name}!</h2>
+      </div>
+    );
+  } else {
+    fbContent = (
+      <FacebookLogin
+        appId='784357619748979'
+        autoLoad={true}
+        fields='name,picture'
+        callback={responseFacebook}
+        cssClass='btnFacebook'
+        textButton='&nbsp;&nbsp;Sign In with Facebook'
+      />
+    );
+  }
+
+  return <div>{fbContent}</div>;
+};
+
+export default Facebook;
