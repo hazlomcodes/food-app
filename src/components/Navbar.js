@@ -24,7 +24,7 @@ const Navbar = () => {
         <a href="/#">Home</a>
         <Link to="/donation/search">Search</Link>
         <Link to="/donation">Donate</Link>
-        <Link to="/login">Login</Link>
+        <Link to="/">Login</Link>
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
