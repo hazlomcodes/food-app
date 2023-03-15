@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import '../styles/login.css';
+import { AuthContext } from '../context/AuthProvider';
 
 const Facebook = () => {
   const [auth, setAuth] = useState(false);
   const [name, setName] = useState('');
   const [picture, setPicture] = useState('');
+
+  const { setFBdata, FBdata } = useContext(AuthContext);
+  console.log(FBdata)
 
   const responseFacebook = (response) => {
     console.log(response);
@@ -13,14 +17,16 @@ const Facebook = () => {
       setAuth(true);
       setName(response.name);
       setPicture(response.picture.data.url);
+      setFBdata(response); // update the context with the response object
     }
   };
+  
 
   useEffect(() => {
     if (auth) {
       const timer = setTimeout(() => {
         window.location.href = '/home'; 
-      }, 3000); 
+      }, 3000000); 
       return () => clearTimeout(timer); 
     }
   }, [auth]);

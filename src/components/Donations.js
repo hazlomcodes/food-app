@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import "../styles/donation.css";
+import { AuthContext } from "../context/AuthProvider";
 
 const DonationForm = ({ onSubmit }) => {
+  const { FBdata } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [expiration, setExpiration] = useState("");
-  const [donator, setDonator] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -17,15 +18,13 @@ const DonationForm = ({ onSubmit }) => {
         name,
         quantity,
         expiration,
-        donator,
-        
+        donator: FBdata.name, // set the donator field to the user's name from context
       });
       console.log("Donation submitted:", response.data);
 
       setName("");
       setQuantity("");
       setExpiration("");
-      setDonator("");
       setSubmitted(true);
 
       event.target.reset();
@@ -36,14 +35,17 @@ const DonationForm = ({ onSubmit }) => {
 
   const handleReturn = () => {
     setSubmitted(false);
-  }
+  };
 
   return (
     <div className="donation-form-container">
       {submitted ? (
         <div className="donation-form__message">
           <p>Thank you for signing up your donation!</p>
-          <button className="donation-form__return-button" onClick={handleReturn}>
+          <button
+            className="donation-form__return-button"
+            onClick={handleReturn}
+          >
             Return to form
           </button>
         </div>
@@ -93,15 +95,15 @@ const DonationForm = ({ onSubmit }) => {
             <input
               className="donation-form__input"
               type="text"
-              value={donator}
-              onChange={(event) => setDonator(event.target.value)}
+              value={FBdata.name} // set the value to the user's name from context
+              readOnly // make the input read-only
               required
-              placeholder="Enter your usernname"
+              placeholder="Enter your username"
               title="Username"
               id="donation-username"
             />
-            </label>
-           <button className="donation-form__submit-button" type="submit">
+          </label>
+          <button className="donation-form__submit-button" type="submit">
             Submit
           </button>
         </form>
@@ -115,3 +117,4 @@ DonationForm.propTypes = {
 };
 
 export default DonationForm;
+

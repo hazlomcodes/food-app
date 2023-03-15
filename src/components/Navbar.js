@@ -21,7 +21,7 @@ const Navbar = () => {
       <Link className="logonavbar" to ='/'>
           <img src={logo} alt="logo" />
         </Link>
-        <a href="/#">Home</a>
+        <a href="/home">Home</a>
         <Link to="/donation/search">Search</Link>
         <Link to="/donation">Donate</Link>
         <Link to="/">Login</Link>
