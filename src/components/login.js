@@ -19,9 +19,9 @@ const Facebook = () => {
   useEffect(() => {
     if (auth) {
       const timer = setTimeout(() => {
-        window.location.href = '/home'; // replace '/home' with the desired page URL
-      }, 3000); // 3 seconds delay
-      return () => clearTimeout(timer); // clear the timer on component unmount
+        window.location.href = '/home'; 
+      }, 3000); 
+      return () => clearTimeout(timer); 
     }
   }, [auth]);
 
