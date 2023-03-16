@@ -9,6 +9,7 @@ const DonationForm = ({ onSubmit }) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [expiration, setExpiration] = useState("");
+  const [dropOff, setdropOff] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -25,6 +26,7 @@ const DonationForm = ({ onSubmit }) => {
       setName("");
       setQuantity("");
       setExpiration("");
+      setdropOff("");
       setSubmitted(true);
 
       event.target.reset();
@@ -95,13 +97,54 @@ const DonationForm = ({ onSubmit }) => {
             <input
               className="donation-form__input"
               type="text"
-              value={FBdata.name} // set the value to the user's name from context
+              value={FBdata?.name} // set the value to the user's name from context
               readOnly // make the input read-only
               required
               placeholder="Enter your username"
               title="Username"
               id="donation-username"
             />
+          </label>
+          <label className="donation-form__label">
+            Drop off Location
+            
+            <select 
+            id="donation-dropoff"
+            
+          
+            
+            >
+              <option> -select-</option>
+              <option>
+
+              123 Main St, Manchester"
+
+              </option>
+              <option>
+
+              The Farmer's Arms, Salford
+                
+              </option>
+              <option>
+              Piccadilly Gardens, Manchester
+              </option>
+              <option>
+
+              Manchester Central Library
+                
+              </option>
+              <option>
+
+              Heaton Park, Manchester
+
+              </option>
+              <option>
+
+              MediaCityUK, Salford
+
+              </option>
+              
+            </select>
           </label>
           <button className="donation-form__submit-button" type="submit">
             Submit
