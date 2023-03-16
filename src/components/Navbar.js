@@ -25,6 +25,7 @@ const Navbar = () => {
         <Link to="/donation/search">Search</Link>
         <Link to="/donation">Donate</Link>
         <Link to="/">Login</Link>
+        <Link to="/reserved">Reserved Items</Link>
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>

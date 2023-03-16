@@ -26,7 +26,7 @@ const Facebook = () => {
     if (auth) {
       const timer = setTimeout(() => {
         window.location.href = '/home'; 
-      }, 3000000); 
+      }, 3000); 
       return () => clearTimeout(timer); 
     }
   }, [auth]);
@@ -49,7 +49,7 @@ const Facebook = () => {
   } else {
     fbContent = (
       <FacebookLogin
-        appId='784357619748979'
+        appId='1542594726233782'
         autoLoad={true}
         fields='name,picture'
         callback={responseFacebook}
