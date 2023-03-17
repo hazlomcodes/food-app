@@ -11,7 +11,7 @@ const DonationForm = ({ onSubmit }) => {
   const [expiration, setExpiration] = useState("");
   const [dropOff, setdropOff] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
+  console.log(FBdata)
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -38,7 +38,7 @@ const DonationForm = ({ onSubmit }) => {
   const handleReturn = () => {
     setSubmitted(false);
   };
-
+  console.log(FBdata)
   return (
     <div className="donation-form-container">
       {submitted ? (
