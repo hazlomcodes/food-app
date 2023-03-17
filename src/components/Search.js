@@ -7,6 +7,7 @@ const Search = () => {
   const [donations, setDonations] = useState([]);
   const [allDonations, setAllDonations] = useState([]);
 
+
   useEffect(() => {
     const fetchDonations = async () => {
       try {
@@ -53,7 +54,7 @@ const Search = () => {
       <ul className="donation-list">
         {donations.map((donation) => (
           <li key={donation.id}>
-            {donation.name} - {donation.quantity} - {donation.expiration} - {donation.donator} 
+            {donation.name} - {donation.quantity} - {donation.expiration} - {donation.donator}
           </li>
         ))}
       </ul>

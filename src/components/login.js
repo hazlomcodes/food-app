@@ -49,7 +49,7 @@ const Facebook = () => {
   } else {
     fbContent = (
       <FacebookLogin
-        appId='784357619748979'
+        appId='1542594726233782'
         autoLoad={true}
         fields='name,picture'
         callback={responseFacebook}
