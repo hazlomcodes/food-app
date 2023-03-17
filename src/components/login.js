@@ -22,15 +22,15 @@ const Facebook = () => {
   };
   
 
-  useEffect(() => {
-    if (auth) {
-      const timer = setTimeout(() => {
-        window.location.href = '/home'; 
-      }, 3000); 
-      return () => clearTimeout(timer); 
-    }
-  }, [auth]);
-
+  // useEffect(() => {
+  //   if (auth) {
+  //     const timer = setTimeout(() => {
+  //       window.location.href = '/home'; 
+  //     }, 3000); 
+  //     return () => clearTimeout(timer); 
+  //   }
+  // }, [auth]);
+  
   let fbContent;
   if (auth) {
     fbContent = (
@@ -49,7 +49,7 @@ const Facebook = () => {
   } else {
     fbContent = (
       <FacebookLogin
-        appId='1542594726233782'
+        appId='784357619748979'
         autoLoad={true}
         fields='name,picture'
         callback={responseFacebook}
