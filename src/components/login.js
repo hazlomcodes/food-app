@@ -39,8 +39,7 @@ const Facebook = () => {
           margin: 'auto',
           padding: '20px',
           color: '#000'
-        }}
-      >
+        }}>
         <img className="profilePic" src={picture} alt={name} />
         <h2 className="loginMsg">Welcome {name}!</h2>
       </div>

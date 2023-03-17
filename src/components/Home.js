@@ -13,10 +13,6 @@ const locations = [
 
     imageUrl: 'https://maps.googleapis.com/.../image2.jpg',
     googleMapsUrl:
-      'https://www.google.com/maps/place/The+Farmers+Arms/@53.5103081,-2.3331755,15.15z/data=!4m14!1m7!3m6!1s0x487baf15c08bd20b:0x93dd3410616fb3ce!2s456+Elm+St,+Swinton,+Manchester+M27+6AY!3b1!8m2!3d53.5148821!4d-2.3446887!3m5!1s0x487baf059bb42153:0x863101ed725b9667!8m2!3d53.5075477!4d-2.3282746!16s%2Fg%2F1v830njy',
-
-    imageUrl: 'https://maps.googleapis.com/.../image2.yjpg',
-    googleMapsUrl:
       'https://www.google.com/maps/place/The+Farmers+Arms/@53.5103081,-2.3331755,15.15z/data=!4m14!1m7!3m6!1s0x487baf15c08bd20b:0x93dd3410616fb3ce!2s456+Elm+St,+Swinton,+Manchester+M27+6AY!3b1!8m2!3d53.5148821!4d-2.3446887!3m5!1s0x487baf059bb42153:0x863101ed725b9667!8m2!3d53.5075477!4d-2.3282746!16s%2Fg%2F1v830njy'
   },
 

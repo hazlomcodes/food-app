@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, onSubmit, useContext } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import '../styles/donation.css';
@@ -118,8 +118,8 @@ const DonationForm = ({ onSubmit }) => {
             Drop off Location
             <select id="donation-dropoff" value={location}>
               <option> -select-</option>
-              <option>123 Main St, Manchester"</option>
-              <option>The Farmer's Arms, Salford</option>
+              <option>123 Main St Manchester</option>
+              <option>The Farmers Arms, Salford</option>
               <option>Piccadilly Gardens, Manchester</option>
               <option>Manchester Central Library</option>
               <option>Heaton Park, Manchester</option>
