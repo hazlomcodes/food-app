@@ -1,12 +1,12 @@
-.btnFacebook { 
+.btnFacebook {
   width: 165px;
-  height:35px;  
+  height: 35px;
   border-radius: 4px;
   background: #3b5998;
-  color:white;
-  border:0px transparent;  
+  color: white;
+  border: 0px transparent;
   text-align: center;
-  margin:5px;
+  margin: 5px;
   display: inline-block;
 }
 
@@ -16,15 +16,12 @@
   cursor: pointer;
 }
 
-.loginMsg{
+.loginMsg {
   font-size: 100px;
 }
 
-
-
-
-@media only screen and (max-width : 399px) {
-  .btnFacebook{
-    width: 100%
+@media only screen and (max-width: 399px) {
+  .btnFacebook {
+    width: 100%;
   }
 }

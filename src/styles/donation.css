@@ -29,7 +29,6 @@
 }
 
 .donation-form__submit-button {
-
   background-color: rbg(43, 71, 92);
   border: none;
   border-radius: 5px;
@@ -46,8 +45,6 @@
   background-color: #303f9f;
 }
 
-
-
 .donation-form__message {
   display: flex;
   flex-direction: column;
@@ -62,13 +59,13 @@
 
 .donation-form__message > p {
   margin-bottom: 20px;
-  color: #BE8A62;
+  color: #be8a62;
   font-size: 16px;
   font-weight: 500;
 }
 
 .donation-form__return-button {
-  background-color: #BE8A62;
+  background-color: #be8a62;
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -81,7 +78,6 @@
 }
 
 .donation-form__return-button:hover {
-  
   background-color: #303f9f;
 }
 
@@ -95,7 +91,7 @@
 
   .donation-form__message {
     width: 100%;
-    color: #295c50; 
+    color: #295c50;
     border-radius: 0;
     box-shadow: none;
     padding: 10px;

@@ -1,36 +1,35 @@
-import React, { useState, useContext } from "react";
-import axios from "axios";
-import PropTypes from "prop-types";
-import "../styles/donation.css";
-import { AuthContext } from "../context/AuthProvider";
-
+import React, { useState, useContext } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import '../styles/donation.css';
+import { AuthContext } from '../context/AuthProvider';
 
 const DonationForm = ({ onSubmit }) => {
   const { FBdata } = useContext(AuthContext);
-  const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [expiration, setExpiration] = useState("");
-  const [location, setLocation]=useState("");
-  const [reserved, setReserved]=useState("")
+  const [name, setName] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [expiration, setExpiration] = useState('');
+  const [location, setLocation] = useState('');
+  const [reserved, setReserved] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/donations", {
+      const response = await axios.post('http://localhost:3000/donations', {
         name,
         quantity,
         expiration,
-        donator: FBdata.name, // set the donator field to the user's name from context
+        donator: FBdata.name // set the donator field to the user's name from context
       });
-      console.log("Donation submitted:", response.data);
+      console.log('Donation submitted:', response.data);
 
-      setName("");
-      setQuantity("");
-      setExpiration("");
-      setLocation("");
-      setReserved("");
-      
+      setName('');
+      setQuantity('');
+      setExpiration('');
+      setLocation('');
+      setReserved('');
+
       setSubmitted(true);
 
       event.target.reset();
@@ -48,10 +47,7 @@ const DonationForm = ({ onSubmit }) => {
       {submitted ? (
         <div className="donation-form__message">
           <p>Thank you for signing up your donation!</p>
-          <button
-            className="donation-form__return-button"
-            onClick={handleReturn}
-          >
+          <button className="donation-form__return-button" onClick={handleReturn}>
             Return to form
           </button>
         </div>
@@ -115,46 +111,19 @@ const DonationForm = ({ onSubmit }) => {
               className="donation-form__input"
               type="checkbox"
               value={reserved}
-             id="donation-reserved"
+              id="donation-reserved"
             />
           </label>
           <label className="donation-form__label">
             Drop off Location
-            
-            <select 
-            id="donation-dropoff"
-            value={location}
-            >
+            <select id="donation-dropoff" value={location}>
               <option> -select-</option>
-              <option>
-
-              123 Main St, Manchester"
-
-              </option>
-              <option>
-
-              The Farmer's Arms, Salford
-                
-              </option>
-              <option>
-              Piccadilly Gardens, Manchester
-              </option>
-              <option>
-
-              Manchester Central Library
-                
-              </option>
-              <option>
-
-              Heaton Park, Manchester
-
-              </option>
-              <option>
-
-              MediaCityUK, Salford
-
-              </option>
-              
+              <option>123 Main St, Manchester"</option>
+              <option>The Farmer's Arms, Salford</option>
+              <option>Piccadilly Gardens, Manchester</option>
+              <option>Manchester Central Library</option>
+              <option>Heaton Park, Manchester</option>
+              <option>MediaCityUK, Salford</option>
             </select>
           </label>
           <button className="donation-form__submit-button" type="submit">
@@ -167,8 +136,7 @@ const DonationForm = ({ onSubmit }) => {
 };
 
 DonationForm.propTypes = {
-  onSubmit: PropTypes.func,
+  onSubmit: PropTypes.func
 };
 
 export default DonationForm;
-

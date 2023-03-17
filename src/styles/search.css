@@ -19,13 +19,11 @@
   padding: 0 16px;
   border: none;
   border-radius: 10px;
-  background-color:rgb(94, 138, 117);
+  background-color: rgb(94, 138, 117);
   color: #fff;
   font-size: 16px;
   cursor: pointer;
 }
-
-
 
 .donation-list {
   list-style: none;
@@ -42,5 +40,5 @@
 }
 
 .body {
-  background-color:black;
+  background-color: black;
 }

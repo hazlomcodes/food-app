@@ -1,7 +1,7 @@
 :root {
-  --mainColor: rgb(94,138,117);
+  --mainColor: rgb(94, 138, 117);
   --mainColorLight: rgb(43, 71, 92);
-  --secondaryColor:#303f9f;
+  --secondaryColor: #303f9f;
   --textColor: #eee;
 }
 
@@ -15,10 +15,9 @@ header {
   color: var(--textColor);
 }
 
-.logonavbar { 
-  height:70px;
-  display:flex;
-  
+.logonavbar {
+  height: 70px;
+  display: flex;
 }
 
 nav a {
@@ -50,7 +49,6 @@ nav {
 }
 
 @media only screen and (max-width: 1024px) {
-  
   header nav {
     position: fixed;
     top: -100vh;
@@ -76,6 +74,3 @@ nav {
 }
 
 /* BE8A62 */
-
-
-

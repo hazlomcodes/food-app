@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const ItemsNeeded = () => {
   const [items, setItems] = useState([]);
@@ -7,9 +7,7 @@ const ItemsNeeded = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(
-        "https://www.givefood.org.uk/api/2/foodbanks/"
-      );
+      const response = await axios.get('https://www.givefood.org.uk/api/2/foodbanks/');
       const foodbanks = response.data.results;
       const needs = await Promise.all(
         foodbanks.map(async (foodbank) => {

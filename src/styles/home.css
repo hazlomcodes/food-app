@@ -3,81 +3,81 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  }
-  
-  /* Media queries */
-  @media screen and (max-width: 768px) {
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
   .location-wrapper {
-  margin: 1rem 0;
+    margin: 1rem 0;
   }
-  }
-  
-  /* Column styles */
-  .row {
+}
+
+/* Column styles */
+.row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  }
-  
-  .column {
+}
+
+.column {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  }
-  
-  .logo-column {
-  background-color: #E9E6E1;
+}
+
+.logo-column {
+  background-color: #e9e6e1;
   height: 850px;
-  }
-  
-  .green-column {
+}
+
+.green-column {
   background-color: rgb(94, 138, 117);
   height: 850px;
-  }
-  
-  /* Locations container styles */
-  .locations-container {
+}
+
+/* Locations container styles */
+.locations-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 2rem;
-  }
-  
-  .location-card {
+}
+
+.location-card {
   flex-basis: 32%;
   margin-bottom: 2rem;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  }
-  
-  .location-card:hover {
+}
+
+.location-card:hover {
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
-  }
-  
-  .location-card a {
+}
+
+.location-card a {
   display: block;
-  }
-  
-  .location-image {
+}
+
+.location-image {
   width: 100%;
   height: 0;
   padding-bottom: 75%;
   object-fit: cover;
-  }
-  
-  .location-address {
+}
+
+.location-address {
   padding: 1rem;
   background-color: #f1f1f1;
   font-weight: bold;
   text-align: center;
   border-radius: 0 0 5px 5px;
-  }
-  
-  /* Media queries */
-  @media screen and (max-width: 768px) {
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
   .location-card {
-  flex-basis: 100%;
+    flex-basis: 100%;
   }
-  }
+}
