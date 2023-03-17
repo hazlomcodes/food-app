@@ -54,7 +54,8 @@ const Search = () => {
       <ul className="donation-list">
         {donations.map((donation) => (
           <li key={donation.id}>
-            {donation.name} - {donation.quantity} - {donation.expiration} - {donation.donator}
+            {donation.name} - {donation.quantity} - {donation.expiration} - {donation.donator} - {donation.reserved} -{donation.location}
+             
           </li>
         ))}
       </ul>
@@ -62,7 +63,7 @@ const Search = () => {
       <ul className="donation-list">
         {allDonations.map((donation) => (
           <li key={donation.id}>
-            {donation.name} - {donation.quantity} - {donation.expiration} - {donation.donator} 
+            {donation.name} - {donation.quantity} - {donation.expiration} - {donation.donator} - {donation.reserved} - {donation.location}
           </li>
         ))}
       </ul>

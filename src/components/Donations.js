@@ -4,14 +4,16 @@ import PropTypes from "prop-types";
 import "../styles/donation.css";
 import { AuthContext } from "../context/AuthProvider";
 
+
 const DonationForm = ({ onSubmit }) => {
   const { FBdata } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [expiration, setExpiration] = useState("");
-  const [dropOff, setdropOff] = useState("");
+  const [location, setLocation]=useState("");
+  const [reserved, setReserved]=useState("")
   const [submitted, setSubmitted] = useState(false);
-  console.log(FBdata)
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -26,7 +28,9 @@ const DonationForm = ({ onSubmit }) => {
       setName("");
       setQuantity("");
       setExpiration("");
-      setdropOff("");
+      setLocation("");
+      setReserved("");
+      
       setSubmitted(true);
 
       event.target.reset();
@@ -38,7 +42,7 @@ const DonationForm = ({ onSubmit }) => {
   const handleReturn = () => {
     setSubmitted(false);
   };
-  console.log(FBdata)
+
   return (
     <div className="donation-form-container">
       {submitted ? (
@@ -105,14 +109,21 @@ const DonationForm = ({ onSubmit }) => {
               id="donation-username"
             />
           </label>
+          <label className="donation-form__label" htmlFor="donation-reserved">
+            Reserved
+            <input
+              className="donation-form__input"
+              type="checkbox"
+              value={reserved}
+             id="donation-reserved"
+            />
+          </label>
           <label className="donation-form__label">
             Drop off Location
             
             <select 
             id="donation-dropoff"
-            
-          
-            
+            value={location}
             >
               <option> -select-</option>
               <option>
