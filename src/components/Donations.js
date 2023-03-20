@@ -105,14 +105,15 @@ const DonationForm = ({ onSubmit }) => {
           <label className="donation-form__label" htmlFor="donation-reserved"></label>
           <label className="donation-form__label">
             Drop off Location
-            <select id="donation-dropoff" value={dropoff}>
-              <option> -select-</option>
-              <option>123 Main St Manchester</option>
-              <option>The Farmers Arms, Salford</option>
-              <option>Piccadilly Gardens, Manchester</option>
-              <option>Manchester Central Library</option>
-              <option>Heaton Park, Manchester</option>
-              <option>MediaCityUK, Salford</option>
+            <select name="dropoff" id="dropoff">
+              <optgroup label="Locations in Manchester"></optgroup>
+              <option value="select">--Select--</option>
+              <option value="123 Main St Manchester">123 Main St Manchester</option>
+              <option value="The Farmers Arms, Salford">The Farmers Arms, Salford</option>
+              <option value="Piccadilly Gardens, Manchester">Piccadilly Gardens, Manchester</option>
+              <option value="Manchester Central Library">Manchester Central Library</option>
+              <option value="Heaton Park, Manchester">Heaton Park, Manchester</option>
+              <option value="MediaCityUK, Salford">MediaCityUK, Salford</option>
             </select>
           </label>
           <button className="donation-form__submit-button" type="submit">
