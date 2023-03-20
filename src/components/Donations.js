@@ -2,7 +2,6 @@ import React, { useState, onSubmit, useContext } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import '../styles/donation.css';
-import Reserved from './Reserved';
 import { AuthContext } from '../context/AuthProvider';
 
 const DonationForm = ({ onSubmit }) => {
@@ -10,7 +9,7 @@ const DonationForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
   const [expiration, setExpiration] = useState('');
-  const [location, setLocation] = useState('');
+  const [dropoff, setDropoff] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -27,7 +26,7 @@ const DonationForm = ({ onSubmit }) => {
       setName('');
       setQuantity('');
       setExpiration('');
-      setLocation('');
+      setDropoff('');
       setSubmitted(true);
 
       event.target.reset();
@@ -106,7 +105,7 @@ const DonationForm = ({ onSubmit }) => {
           <label className="donation-form__label" htmlFor="donation-reserved"></label>
           <label className="donation-form__label">
             Drop off Location
-            <select id="donation-dropoff" value={location}>
+            <select id="donation-dropoff" value={dropoff}>
               <option> -select-</option>
               <option>123 Main St Manchester</option>
               <option>The Farmers Arms, Salford</option>

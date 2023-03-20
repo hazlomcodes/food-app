@@ -28,7 +28,7 @@ function Reserved() {
   let isChecked = (item) => checked.includes(item) ? 'checked-item' : 'not-checked-item';
 
   return (
-    <div className="app">
+    <div className="reserved">
       <div className="checkList">
         <div className="title">Would you like to reserve this item?:</div>
         <div className="list-container">
@@ -42,6 +42,9 @@ function Reserved() {
       </div>
 
       <div>{`You have reserved: ${checkedItems}`}</div>
+      <button className="donation-form__submit-button" type="submit">
+        Submit
+        </button>
     </div>
   );
 }
