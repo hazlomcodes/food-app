@@ -6,6 +6,7 @@ import Login from './login';
 import Navbar from './Navbar';
 import Search from './Search';
 import Home from './Home';
+import Reserved from './Reserved';
 import ItemsNeeded from './itemsNeeded';
 import { AuthProvider } from '../context/AuthProvider';
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/donation/search" element={<Search />} />
             <Route path="/item" element={<ItemsNeeded />} />
             <Route path="/donation" element={<Donation />} />
+            <Route path="/reserved" element={<Reserved />} />
           </Routes>
         </React.Fragment>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import '../styles/login.css';
 import { AuthContext } from '../context/AuthProvider';
@@ -39,7 +39,8 @@ const Facebook = () => {
           margin: 'auto',
           padding: '20px',
           color: '#000'
-        }}>
+        }}
+      >
         <img className="profilePic" src={picture} alt={name} />
         <h2 className="loginMsg">Welcome {name}!</h2>
       </div>
