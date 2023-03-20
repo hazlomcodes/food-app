@@ -2,6 +2,7 @@ import React, { useState, onSubmit, useContext } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import '../styles/donation.css';
+import Reserved from './Reserved';
 import { AuthContext } from '../context/AuthProvider';
 
 const DonationForm = ({ onSubmit }) => {
@@ -10,7 +11,6 @@ const DonationForm = ({ onSubmit }) => {
   const [quantity, setQuantity] = useState('');
   const [expiration, setExpiration] = useState('');
   const [location, setLocation] = useState('');
-  const [reserved, setReserved] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (event) => {
@@ -28,8 +28,6 @@ const DonationForm = ({ onSubmit }) => {
       setQuantity('');
       setExpiration('');
       setLocation('');
-      setReserved('');
-
       setSubmitted(true);
 
       event.target.reset();
@@ -105,15 +103,7 @@ const DonationForm = ({ onSubmit }) => {
               id="donation-username"
             />
           </label>
-          <label className="donation-form__label" htmlFor="donation-reserved">
-            Reserved
-            <input
-              className="donation-form__input"
-              type="checkbox"
-              value={reserved}
-              id="donation-reserved"
-            />
-          </label>
+          <label className="donation-form__label" htmlFor="donation-reserved"></label>
           <label className="donation-form__label">
             Drop off Location
             <select id="donation-dropoff" value={location}>
