@@ -48,8 +48,7 @@ const Facebook = () => {
   } else {
     fbContent = (
       <FacebookLogin
-        appId="1542594726233782"
-        autoLoad={true}
+        appId="784357619748979"
         fields="name,picture"
         callback={responseFacebook}
         cssClass="btnFacebook"
