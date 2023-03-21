@@ -1,8 +1,8 @@
 :root {
-  --mainColor: rgb(94, 138, 117);
+  --mainColor: rgb(75, 123, 93);
   --mainColorLight: rgb(43, 71, 92);
   --secondaryColor: #303f9f;
-  --textColor: #eee;
+  --textColor: #e9e6e1;
 }
 
 header {
@@ -22,12 +22,15 @@ header {
 
 nav a {
   margin: 0 1rem;
+  text-align: center;
   color: var(--textColor);
   text-decoration: none;
+  font-size: 20px;
+  font-weight: 800;
 }
 
 nav a:hover {
-  color: var(--secondaryColor);
+  text-decoration: underline 3px;
 }
 
 header .nav-btn {
@@ -46,6 +49,14 @@ header div,
 nav {
   display: flex;
   align-items: center;
+  padding-left: 40rem;
+  position: fixed;
+  height: 80px;
+  background-color: var(--mainColor);
+}
+
+nav {
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {

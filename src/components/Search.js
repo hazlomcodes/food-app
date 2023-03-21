@@ -31,7 +31,7 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <div className="search-container">
       <form className="search-form" onSubmit={handleSearch}>
         <input
           className="search-input"
@@ -57,6 +57,7 @@ const Search = () => {
       <ul className="donation-list">
         {allDonations.map((donation) => (
           <li key={donation.id}>
+            <b>Item: </b>
             {donation.name} - {donation.quantity} - {donation.expiration} - {donation.donator} -
             {donation.dropoff}
           </li>
