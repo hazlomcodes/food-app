@@ -25,7 +25,7 @@ function Reserved() {
     : '';
 
   // Return classes based on whether item is checked
-  let isChecked = (item) => checked.includes(item) ? 'checked-item' : 'not-checked-item';
+  let isChecked = (item) => (checked.includes(item) ? 'checked-item' : 'not-checked-item');
 
   return (
     <div className="reserved">
@@ -44,7 +44,7 @@ function Reserved() {
       <div>{`You have reserved: ${checkedItems}`}</div>
       <button className="donation-form__submit-button" type="submit">
         Submit
-        </button>
+      </button>
     </div>
   );
 }

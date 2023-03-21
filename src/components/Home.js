@@ -47,6 +47,16 @@ const Home = () => {
         <div className="column">
           <div className="green-column">
             <h1>We are Do-Nation</h1>
+            <p>
+              Welcome to Do-Nation, the food donation application that aims to reduce food waste and
+              help those in need. With Do-Nation, you can easily donate your excess food items and
+              reserve food that would otherwise go to waste. By simply logging in with your Facebook
+              account, you can browse available donations and reserve them for pick-up at convenient
+              locations throughout Manchester. With each donation, you are helping to combat food
+              waste and contribute to a more sustainable future. So whether you have extra food to
+              donate or are in need of a meal, Do-Nation is here to help. Join us in our mission to
+              donate, reserve, and stop food waste today.
+            </p>
           </div>
         </div>
       </div>

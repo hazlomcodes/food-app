@@ -1,16 +1,20 @@
-import React, { useState, onSubmit, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import '../styles/donation.css';
 import { AuthContext } from '../context/AuthProvider';
 
-const DonationForm = ({ onSubmit }) => {
+const DonationForm = () => {
   const { FBdata } = useContext(AuthContext);
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
   const [expiration, setExpiration] = useState('');
   const [dropoff, setDropoff] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  const handleDropoffChange = (event) => {
+    setDropoff(event.target.value);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +23,8 @@ const DonationForm = ({ onSubmit }) => {
         name,
         quantity,
         expiration,
-        donator: FBdata.name // set the donator field to the user's name from context
+        donator: FBdata.name,
+        dropoff // set the donator field to the user's name from context
       });
       console.log('Donation submitted:', response.data);
 
@@ -105,7 +110,7 @@ const DonationForm = ({ onSubmit }) => {
           <label className="donation-form__label" htmlFor="donation-reserved"></label>
           <label className="donation-form__label">
             Drop off Location
-            <select name="dropoff" id="dropoff">
+            <select name="dropoff" id="dropoff" onChange={handleDropoffChange} value={dropoff}>
               <optgroup label="Locations in Manchester"></optgroup>
               <option value="select">--Select--</option>
               <option value="123 Main St Manchester">123 Main St Manchester</option>
