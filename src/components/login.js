@@ -39,7 +39,8 @@ const Facebook = () => {
           margin: 'auto',
           padding: '20px',
           color: '#000'
-        }}>
+        }}
+      >
         <img className="profilePic" src={picture} alt={name} />
         <h2 className="loginMsg">Welcome to Do-Nation {name}!</h2>
       </div>
@@ -47,7 +48,7 @@ const Facebook = () => {
   } else {
     fbContent = (
       <FacebookLogin
-        appId="1542594726233782"
+        appId="784357619748979"
         fields="name,picture"
         callback={responseFacebook}
         cssClass="btnFacebook"
