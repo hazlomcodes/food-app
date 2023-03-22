@@ -75,9 +75,6 @@ nav {
     transition: 1s;
   }
 
-  header .responsive_nav {
-    transform: translateY(100vh);
-  }
 
   nav a {
     font-size: 1.5rem;

@@ -53,11 +53,10 @@ const Search = () => {
           </li>
         ))}
       </ul>
-      <h2>All Donations</h2>
+      <h2>Donated Items</h2>
       <ul className="donation-list">
         {allDonations.map((donation) => (
           <li key={donation.id}>
-            <b>Item: </b>
             {donation.name} - {donation.quantity} - {donation.expiration} - {donation.donator} -
             {donation.dropoff}
           </li>

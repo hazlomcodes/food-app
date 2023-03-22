@@ -32,7 +32,7 @@
 }
 
 .donation-form__submit-button {
-  background-color: rbg(43, 71, 92);
+  background-color: rgba(43, 71, 92);
   border: none;
   border-radius: 5px;
   color: #fff;
@@ -62,13 +62,13 @@
 
 .donation-form__message > p {
   margin-bottom: 20px;
-  color: #be8a62;
+  color: rgb(94, 138, 117);
   font-size: 16px;
   font-weight: 500;
 }
 
 .donation-form__return-button {
-  background-color: #be8a62;
+  background-color: rgb(94, 138, 117);
   border: none;
   border-radius: 5px;
   color: #fff;

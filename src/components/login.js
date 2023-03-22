@@ -41,7 +41,7 @@ const Facebook = () => {
           color: '#000'
         }}>
         <img className="profilePic" src={picture} alt={name} />
-        <h2 className="loginMsg">Welcome {name}!</h2>
+        <h2 className="loginMsg">Welcome to Do-Nation {name}!</h2>
       </div>
     );
   } else {

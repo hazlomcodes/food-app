@@ -8,6 +8,7 @@
   gap: 20px;
   height: 100vh;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: black;
 }
 .title {
   font-size: 22px;
@@ -26,3 +27,4 @@
 .checked-item {
   text-decoration: line-through;
 }
+

@@ -35,11 +35,14 @@
   margin-bottom: 8px;
   padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 16px;
+  background-color: #fff;
 }
 
 .search-container {
-  padding: 10px 30px 30px 30px;
-  color: #000000;
+  padding: 30px;
+  margin: 0 300px 0 300px;
+  color: black;
+
 }

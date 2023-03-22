@@ -42,7 +42,7 @@ function Reserved() {
       </div>
 
       <div>{`You have reserved: ${checkedItems}`}</div>
-      <button className="donation-form__submit-button" type="submit">
+      <button className="reservation-form__submit-button" type="submit">
         Submit
       </button>
     </div>
