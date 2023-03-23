@@ -48,7 +48,7 @@ const Facebook = () => {
   } else {
     fbContent = (
       <FacebookLogin
-        appId="784357619748979"
+        appId="1542594726233782"
         fields="name,picture"
         callback={responseFacebook}
         cssClass="btnFacebook"
